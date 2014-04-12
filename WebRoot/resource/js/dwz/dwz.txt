@@ -1,0 +1,111 @@
+说明：
+	版本：1.4.5
+
+修改内容：
+一.	dwz.ui.js 
+	1.在最后添加自定义插件
+		//鼠标拖拉改变元素大小 if ($.fn.myreSize) $("[reStyleSize]", $p).myreSize();
+		  说明：为属性值有reStyleSize的元素添加 鼠标拖拉改变元素宽和高的事件,需要引入reSize.js
+    2.添加自定义插件，美化上传按钮 ,需引入 jquery.filestyle.js
+    3.	//添加多选查找带回，不替换，而是直接追加的形式  
+		if ($.fn.appendMultLookup) $("[appendMultLookup]:button", $p).appendMultLookup();
+	
+	4.	//将表单内所有的输入框清空值  type="text"
+		if($.fn.formReset)$("button[formreset],a[formreset]", $p).formReset();
+	
+	
+二.	dwz.database.js	查找带回
+	1.原代码：var $input = $(this), inputName = $input.attr("name");
+	    修改为：  var $input = $(this), inputName = $input.attr("toName");
+	   修改说明：将原name 修改为toName 解决name冲突问题,	
+	2.为 主从结构，从表    添加上传文件选择按钮美化
+	   需要添加两处代码
+	   //上传文件选择按钮美化
+		case 'file':
+			html = '<input type="file"  fileupload="no"  name="'+field.name+'" value="'+field.defaultVal+'" size="'+field.size+'" class="'+field.fieldClass+'" '+attrFrag+'/>';			
+			break;
+	//在从表table中查找新添加的 上传选择按钮进行美化，
+	$("input[fileupload='no']",$table).filestyle({});
+	
+	3.添加代码：appendBringBackSuggest，appendMultLookup两个方法
+	  说明：添加多选查找带回，不替换，而是直接追加的形式  
+	4. itemDetail 里面删除方法缺少弹出提示，
+		添加代码：//添加错误弹出框提示
+				DWZ.ajaxDone(json);
+				if (json.statusCode == DWZ.statusCode.ok){
+					$btnDel.parents("tr:first").remove();
+					initSuffix($tbody);
+				}
+		说明：当服务器返回操作成功之后才会调用方法 $btnDel.parents("tr:first").remove();initSuffix($tbody);，并提示成功失败
+	
+	   
+三：dwz.combox.js   select 列表
+	1.原代码：options +="<li><a class=\""+ (value==option[0].value?"selected":"") +"\" href=\"#\" value=\"" + option[0].value + "\">" + option[0].text + "</a></li>";
+	   修改为：options +="<li><a class=\""+ (value==option[0].value?"selected":"") +"\" href=\"javascript:;\" value=\"" + option[0].value + "\">" + option[0].text + "</a></li>";
+	 修改说明:将生成的a标签属性href的值由#改为javascript:;使点击链接无效，为解决spring拦截所有请求问题，#导致直接跳转到web默认页面
+	2.添加如下代码 ：
+				var sValue=$this.attr("sValue");
+				if(sValue)$this.val(sValue);
+	说明：在select 标签 加上sValue属性 自动取sValue的值给select 赋值上去
+四：dwz.checkbox.js 多选
+	1.原代码：$checkboxLi = $parent.find(":checkbox[name='"+_name+"']");
+	     修改为：$checkboxLi = $parent.find(":checkbox[name='"+_name+"'][disabled!='disabled']");
+	    说明：当 多选框不可用时，不选中
+
+
+五.core.css 样式修改  span.error{width:auto;}
+	
+	
+六.dwz.stable.js 查询table显示
+	1. if (/safari/i.test(navigator.userAgent)) {
+				try {
+					document.execCommand("BackgroundImageCache", false, true);
+				}catch(e){}
+			}else{
+	说明：如果是safari 浏览器，需特殊处理 th 宽度
+
+
+七.dwz.ajax.js 
+	1.iframeCallback()，_iframeResponse() 
+		添加代码：$("button:submit",$form).text("文件上传中...").attr({"disabled":"disabled"}).parent().parent().attr("class","buttonDisabled");
+		说明：取消带文件上传的ajax表单提交,//$document.trigger("ajaxStart");//$document.trigger("ajaxStop");
+
+	2.dwzExport 修改导出请求以新窗口形式打开
+			//window.location = url+(url.indexOf('?') == -1 ? "?" : "&")+$form.serialize();
+			window.open (url+(url.indexOf('?') == -1 ? "?" : "&")+$form.serialize());
+
+	3.validateCallback,iframeCallback 两个方法添加判断服务器是否返回错误，如果错误弹出错误信息并隐藏$(document).trigger("ajaxStop");
+	4.自定义 alertServiceErrorMsg方法，服务器异常
+
+
+
+八.dwz.panel.js
+	1.解决在面板第一行添加a链接，点击展开隐藏会被换成展开隐藏图标，
+		修改代码：//为展开关闭的a 添加collapse属性
+				if(collapse)$("<a href=\"javascript:;\" collapse ></a>").addClass(close?op.exp:op.coll).insertAfter(title);
+				var $pucker = $("a[collapse]", header);
+
+九.dwz.frag.xml
+	1.添加自定义消息
+		<_MSG_ id="parseError"><![CDATA[操作失败！服务器错误！]]></_MSG_>
+		用于json解析失败提示
+
+
+十.dwz.navTab.js
+	1.标签菜单项的刷新重新加载标签，不获取标签内的form参数
+		//获取pagerForm参数
+		//var $pagerForm = $("#pagerForm", $panel);
+		//不获取参数
+		//var args = $pagerForm.size()>0 ? $pagerForm.serializeArray() : {}
+		
+		//重新加载标签
+		$panel.loadUrl(url, {}, function(){navTab._loadUrlCallback($panel);});
+	2.//如果pagerForm存在，则去除url？之后的参数
+		if($pagerForm.length>0){
+			url=url.split("?")[0];
+		}
+
+
+
+
+	

@@ -1,0 +1,22 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<option value="1">通知类型</option>
+<option value="2">会议类型</option>
+<option value="3">新闻类型</option>
+<option value="4">通讯录分组</option>
+<option value="5">日志类型</option>
+<option value="6">日程类型</option>
+<option value="7">公告类型</option>
+<option value="8">规章类型</option>
+<option value="9">法规类型</option>
+<option value="10">车辆类型</option>
+<option value="11">员工类型</option>
+<option value="12">职位</option>
+<option value="13">学历</option>
+<option value="14">离职原因</option>
+<option value="15">退休原因</option>
+<option value="16">办公用品类型</option>
+<option value="17">工作流程类型</option>
+<option value="18">流程任务处理意见</option>
+<option value="19">职务</option>
+<option value="20">党员</option> 
+<option value="21">所属社区</option>

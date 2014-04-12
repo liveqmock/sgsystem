@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>mydialog</title>
+    <script type="text/javascript" src="../internal.js"></script>
+    <style type="text/css">
+        .warp {width: 320px;height: 153px;margin-left:5px;padding: 20px 0 0 15px;position: relative;}
+        #url {width: 290px; margin-bottom: 2px; margin-left: -6px; margin-left: -2px\9;*margin-left:0;_margin-left:0; }
+        .format span{display: inline-block; width: 58px;text-align: center; zoom:1;}
+        table td{padding:5px 0;}
+        #align{width: 65px;height: 23px;line-height: 22px;}
+    </style>
+</head>
+<body>
+    <div class="warp">
+        <table width="300" cellpadding="0" cellspacing="0">
+            <tr>
+                <td  class="format">
+                    <span>字段名称:</span>
+                    <input type="text" id="mc" />
+                </td>
+            </tr>
+            <tr>
+                <td  class="format">
+                	 <span>字段类型:</span>	
+                	<select  id="lx">
+		    			<option value="1">字符</option>
+		    			<option value="2">整数</option>
+		    			<option value="3">小数</option>
+		   			 </select>
+                </td>
+
+            </tr>
+            <tr>
+                <td  class="format">
+                	 <span>字段长度:</span>
+                	 <input type="text" id="cd" />
+                </td>
+
+            </tr>
+            <tr>
+                <td  class="format">
+                	 <span>控件宽度：</span>
+                	  <input type="text" id="kd" value="200" />
+		    		  <select  id="kdlx">
+		    			<option value="px">px</option>
+		    			<option value="%">%</option>
+		   			 </select>
+                </td>
+
+            </tr>
+            <tr>
+                <td  class="format">
+                	 <span>是否必填:</span>
+                	 <input type="checkbox" id="bt" /> 
+                </td>
+
+            </tr>
+        </table>
+	</div>
+    <script type="text/javascript">
+    	
+	    dialog.onok = function(){
+	    	
+	    	var mc=document.getElementById('mc').value;
+	    	var lx=document.getElementById('lx').value;
+	    	var cd=document.getElementById('cd').value;
+	    	var kd=document.getElementById('kd').value;
+	    	var kdlx=document.getElementById('kdlx').value;
+	    	var bt=document.getElementById('bt').value;
+	    	
+	    	if(mc==""){
+	    		alert("字段名称不能为空!");
+	    		return false;
+	    	}
+	    	if(lx==""){
+	    		alert("字段类型不能为空!");
+	    		return false;
+	    	}
+	    	var html="<input type='text' name='"+mc+"'" ;
+	    	if(cd!=''){
+	    		html+=" maxlength='"+cd+"'";
+	    	}
+	    	if(kd==""){
+	    		html+="style='width: 200px'";
+	    	}else{
+	    		html+=" style='width:"+kd+kdlx+"'";
+	    	}
+	    	if(bt!=''){
+	    		html+=" class='required'";
+	    	}
+	    	//将html代码写入编辑器
+	    	editor.execCommand('inserthtml',html+" />");
+	    }
+    </script>
+</body>
+</html>

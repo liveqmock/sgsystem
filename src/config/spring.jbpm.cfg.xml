@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jbpm-configuration>
+
+  <import resource="jbpm.default.cfg.xml" />
+  <import resource="jbpm.tx.spring.cfg.xml" />
+  <import resource="jbpm.jpdl.cfg.xml" />
+  <import resource="jbpm.bpmn.cfg.xml" />
+  <!-- <import resource="jbpm.identity.cfg.xml" /> -->
+  <import resource="jbpm.businesscalendar.cfg.xml" />
+<!--   <import resource="jbpm.console.cfg.xml" />
+  <import resource="jbpm.jobexecutor.cfg.xml" /> -->
+  
+  <process-engine-context>
+    <string name="spring.cfg" value="config/applicationContext.xml" />
+  </process-engine-context>
+
+	<!-- 自定义identity 接口实现 -->
+	<transaction-context>
+	        <hibernate-session current="true"/>    
+	        <object  class="com.jxoa.manager.workFlow.service.impl.MyIdentityServiceImpl"/>    
+	</transaction-context>
+
+
+</jbpm-configuration>

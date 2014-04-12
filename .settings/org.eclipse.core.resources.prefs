@@ -1,0 +1,14 @@
+eclipse.preferences.version=1
+encoding//WebRoot/WEB-INF/jsp/web/dwzp/web.jsp=UTF-8
+encoding//WebRoot/WEB-INF/jsp/web/right.jsp=UTF-8
+encoding//WebRoot/WEB-INF/jsp/web/web.jsp=UTF-8
+encoding//src/com/jxoa/commons/config/MasConfig.java=UTF-8
+encoding//src/config/dbcp.properties=UTF-8
+encoding//src/config/internationalization/messages_zh.properties=UTF-8
+encoding//src/config/internationalization/validationMessages/common_platform_zh.properties=UTF-8
+encoding//src/config/internationalization/validationMessages/coordination_zh.properties=UTF-8
+encoding//src/config/internationalization/validationMessages/files_zh.properties=UTF-8
+encoding//src/config/internationalization/validationMessages/personalOffice_zh.properties=UTF-8
+encoding//src/config/internationalization/validationMessages/system_zh.properties=UTF-8
+encoding//src/config/jdbc.properties=UTF-8
+encoding//src/config/webconfig.properties=UTF-8

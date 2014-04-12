@@ -1,0 +1,171 @@
+﻿  table.qa
+  {
+    background-color:#c0de98;
+    width:500px;
+  }
+  table.qa tr{
+  	height: 30px;
+  }
+  tr.firstLine td{
+  	font-weight: bold;
+  	font-size: 19px;
+  }
+  table.qa td
+  {
+    background-color:#ffffff;
+    font-size: 13px;
+    text-align: center;
+  } 
+  td.option a{
+  	text-decoration: none;
+  }
+  td.option a:hover{
+  	BORDER-RIGHT: #000099 1px solid; BORDER-TOP: #000099 1px solid; BORDER-LEFT: #000099 1px solid; COLOR: #000; BORDER-BOTTOM: #000099 1px solid
+  }
+  td.option a:active{
+  	BORDER-RIGHT: #000099 1px solid; BORDER-TOP: #000099 1px solid; BORDER-LEFT: #000099 1px solid; COLOR: #000; BORDER-BOTTOM: #000099 1px solid
+  }
+  caption.qa{
+  	line-height: 50%;
+  }
+
+  textarea.question{
+            width:500px;
+            height:100px;
+            text-align:center;
+            SCROLLBAR-FACE-COLOR: #004824;
+            SCROLLBAR-HIGHLIGHT-COLOR: #004824;
+            SCROLLBAR-SHADOW-COLOR: #004824;
+            SCROLLBAR-3DLIGHT-COLOR: #004824;
+            SCROLLBAR-ARROW-COLOR: #00fc00;
+            SCROLLBAR-TRACK-COLOR: #4848fc;
+            SCROLLBAR-DARKSHADOW-COLOR: #004824;
+            SCROLLBAR-BASE-COLOR: #004824″
+  }
+
+  .btn-select {
+      position: relative;
+      display: inline-block;
+      width: 150px;
+      height: 19px;
+      background-color: #f80;
+      font: 14px/20px "Microsoft YaHei";
+      color: #fff;
+    }
+
+    
+
+    .btn-select option:hover .cur-select {
+      background-color: #f90;
+    }
+
+    .btn-select select {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 150px;
+      height: 25px;
+      opacity: 0;
+      filter: alpha(opacity: 0;);
+      font: 14px/20px "Microsoft YaHei";
+      color: #f80;
+    }
+
+    .btn-select  option {
+      text-indent: 10px;
+    }
+
+    .btn-select  option:hover {
+      background-color: #f80;
+      color: #fff;
+    }
+
+
+     .file-box{ position:relative;width:340px} 
+     .txt{ height:22px; border:1px solid #cdcdcd; width:180px;} 
+     .btn{ background-color:#FFF; border:1px solid #CDCDCD;height:24px; width:70px;} 
+     .file{ position:absolute; top:0; right:80px; height:24px; filter:alpha(opacity:0);opacity: 0;width:260px } 
+
+
+/*类型列表样式*/
+
+#mytable { 
+    width: 1000px; 
+    padding: 0; 
+    margin: 0; 
+    cellspacing:0;
+} 
+caption { 
+    padding: 0 0 5px 0; 
+    width: 700px;      
+    font: italic 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; 
+    text-align: right; 
+} 
+
+th { 
+    font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; 
+    color: #4f6b72; 
+    border-right: 1px solid #C1DAD7; 
+    border-bottom: 1px solid #C1DAD7; 
+    border-top: 1px solid #C1DAD7; 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    text-align: left; 
+    padding: 6px 6px 6px 12px; 
+    background: #CAE8EA ; 
+} 
+
+td { 
+    border-right: 1px solid #C1DAD7; 
+    border-bottom: 1px solid #C1DAD7; 
+    border-left: 1px solid #C1DAD7; 
+    border-top: 0; 
+    font-size:11px; 
+    font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; 
+    padding: 6px 6px 6px 12px; 
+} 
+td.spec { 
+    background: #fff ; 
+    color: #4f6b72; 
+} 
+td.specalt { 
+    background: #f5fafa; 
+    color: #797268; 
+} 
+
+.t12{
+  text-decoration : none;
+  color:#006699;
+  height: 25px; 
+  width: 130px; 
+  padding-top: 4px; 
+  padding-right: 4px; 
+  padding-bottom: 4px; 
+  padding-left: 4px;
+  border: 1px #0000CC solid;
+  filter: Blur(Add=1, Direction=45, Strength=2);
+  text-align: center;
+}
+
+
+
+/*CSS Digg style pagination*/
+
+DIV.digg {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px; MARGIN: 3px; PADDING-TOP: 3px; TEXT-ALIGN: center
+}
+DIV.digg A {
+	BORDER-RIGHT: #aaaadd 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #aaaadd 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 2px; MARGIN: 2px; BORDER-LEFT: #aaaadd 1px solid; COLOR: #000099; PADDING-TOP: 2px; BORDER-BOTTOM: #aaaadd 1px solid; TEXT-DECORATION: none
+}
+DIV.digg A:hover {
+	BORDER-RIGHT: #000099 1px solid; BORDER-TOP: #000099 1px solid; BORDER-LEFT: #000099 1px solid; COLOR: #000; BORDER-BOTTOM: #000099 1px solid
+}
+DIV.digg A:active {
+	BORDER-RIGHT: #000099 1px solid; BORDER-TOP: #000099 1px solid; BORDER-LEFT: #000099 1px solid; COLOR: #000; BORDER-BOTTOM: #000099 1px solid
+}
+DIV.digg SPAN.current {
+	BORDER-RIGHT: #000099 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #000099 1px solid; PADDING-LEFT: 5px; FONT-WEIGHT: bold; PADDING-BOTTOM: 2px; MARGIN: 2px; BORDER-LEFT: #000099 1px solid; COLOR: #fff; PADDING-TOP: 2px; BORDER-BOTTOM: #000099 1px solid; BACKGROUND-COLOR: #000099
+}
+DIV.digg SPAN.disabled {
+	BORDER-RIGHT: #eee 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #eee 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 2px; MARGIN: 2px; BORDER-LEFT: #eee 1px solid; COLOR: #ddd; PADDING-TOP: 2px; BORDER-BOTTOM: #eee 1px solid
+}
